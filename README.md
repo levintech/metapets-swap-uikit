@@ -1,2 +1,1 @@
-# metapets-swap-uikit
- uikit of MetapetsSwap
+# Uikit of MetapetsSwap
