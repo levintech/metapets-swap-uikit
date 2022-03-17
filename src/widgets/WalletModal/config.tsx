@@ -60,12 +60,6 @@ const connectors: Config[] = [
     connectorId: ConnectorNames.Injected,
     priority: 999,
   },
-  {
-    title: "Blocto",
-    icon: Blocto,
-    connectorId: ConnectorNames.Blocto,
-    priority: 999,
-  },
 ];
 
 export default connectors;
