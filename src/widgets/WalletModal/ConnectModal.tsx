@@ -79,9 +79,10 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null, displayC
             {t("Haven’t got a crypto wallet yet?")}
           </Text>
           <Button
+            className="default-button"
             as="a"
             href="https://docs.pancakeswap.finance/get-started/connection-guide"
-            variant="subtle"
+            variant="secondary"
             width="100%"
             {...getExternalLinkProps()}
           >

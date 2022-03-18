@@ -19,15 +19,15 @@ const Toggle: React.FC<ToggleProps> = ({
       <Input checked={checked} scale={scale} {...props} type="checkbox" />
       {startIcon && endIcon ? (
         <>
-          <Handle scale={scale}>
-            <Flex height="100%" alignItems="center" justifyContent="center">
+          <Handle scale={scale} />
+            {/* <Flex height="100%" alignItems="center" justifyContent="center">
               {checked ? endIcon(checked) : startIcon(!checked)}
             </Flex>
-          </Handle>
-          <Flex width="100%" height="100%" justifyContent="space-around" alignItems="center">
+          </Handle> */}
+          {/* <Flex width="100%" height="100%" justifyContent="space-around" alignItems="center">
             {startIcon()}
             {endIcon()}
-          </Flex>
+          </Flex> */}
         </>
       ) : (
         <Handle scale={scale} />

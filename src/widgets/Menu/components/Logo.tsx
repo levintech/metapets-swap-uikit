@@ -57,7 +57,7 @@ const StyledLogoWithTextIcon = styled.img`
 const Logo: React.FC<Props> = ({ isDark, href }) => {
   const { linkComponent } = useContext(MenuContext);
   const isAbsoluteUrl = href.startsWith("http");
-  const mobileLogo = isDark ? '/images/logo-dark.png' : '/images/logo-light.png'
+  const mobileLogo = isDark ? '/images/logo-dark.svg' : '/images/logo-light.svg'
   const desktopLogo = isDark ? '/images/logoWithText_dark.png' : '/images/logoWithText_light.png'
 
   const innerLogo = (

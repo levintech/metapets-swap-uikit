@@ -2909,10 +2909,10 @@ var dark$4 = {
 };
 
 var light$3 = {
-    handleBackground: lightColors.backgroundAlt,
+    handleBackground: lightColors.contrast,
 };
 var dark$3 = {
-    handleBackground: darkColors.backgroundAlt,
+    handleBackground: darkColors.contrast,
 };
 
 var light$2 = {
@@ -3851,11 +3851,7 @@ var Toggle = function (_a) {
     return (React__default.createElement(StyledToggle, { "$checked": isChecked, "$checkedColor": checkedColor, "$defaultColor": defaultColor, scale: scale },
         React__default.createElement(Input, __assign({ checked: checked, scale: scale }, props, { type: "checkbox" })),
         startIcon && endIcon ? (React__default.createElement(React__default.Fragment, null,
-            React__default.createElement(Handle, { scale: scale },
-                React__default.createElement(Flex, { height: "100%", alignItems: "center", justifyContent: "center" }, checked ? endIcon(checked) : startIcon(!checked))),
-            React__default.createElement(Flex, { width: "100%", height: "100%", justifyContent: "space-around", alignItems: "center" },
-                startIcon(),
-                endIcon()))) : (React__default.createElement(Handle, { scale: scale }))));
+            React__default.createElement(Handle, { scale: scale }))) : (React__default.createElement(Handle, { scale: scale }))));
 };
 
 var ThemeSwitcher = function (_a) {
@@ -4359,10 +4355,7 @@ var useKonamiCheatCode = function (matchedCodeHandler) {
     }, [matchedCodeHandler]);
 };
 
-var ModalHeader = styled.div(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  align-items: center;\n  background: ", ";\n  border-bottom: 1px solid ", ";\n  display: flex;\n  padding: 12px 24px;\n"], ["\n  align-items: center;\n  background: ", ";\n  border-bottom: 1px solid ", ";\n  display: flex;\n  padding: 12px 24px;\n"])), function (_a) {
-    var background = _a.background;
-    return background || "transparent";
-}, function (_a) {
+var ModalHeader = styled.div(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  align-items: center;\n  background: transparent;\n  border-bottom: 1px solid ", ";\n  display: flex;\n  padding: 12px 24px;\n"], ["\n  align-items: center;\n  background: transparent;\n  border-bottom: 1px solid ", ";\n  display: flex;\n  padding: 12px 24px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.cardBorder;
 });
@@ -4378,12 +4371,9 @@ var ModalBackButton = function (_a) {
     return (React__default.createElement(IconButton, { variant: "text", onClick: onBack, "area-label": "go back", mr: "8px" },
         React__default.createElement(Icon$2e, { color: "primary" })));
 };
-var ModalContainer = styled(Box)(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  overflow: hidden;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border: 1px solid ", ";\n  border-radius: 32px;\n  width: 100%;\n  max-height: 100vh;\n  z-index: ", ";\n\n  ", " {\n    width: auto;\n    min-width: ", ";\n    max-width: 100%;\n  }\n"], ["\n  overflow: hidden;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border: 1px solid ", ";\n  border-radius: 32px;\n  width: 100%;\n  max-height: 100vh;\n  z-index: ", ";\n\n  ", " {\n    width: auto;\n    min-width: ", ";\n    max-width: 100%;\n  }\n"])), function (_a) {
+var ModalContainer = styled(Box)(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  background-clip: padding-box,border-box;\n  background-image: ", ";\n  background-origin: padding-box,border-box;\n  border: 2px solid transparent;\n\n  overflow: hidden;\n  border-radius: 32px;\n  width: 100%;\n  max-height: 100vh;\n  z-index: ", ";\n\n  ", " {\n    width: auto;\n    min-width: ", ";\n    max-width: 100%;\n  }\n"], ["\n  background-clip: padding-box,border-box;\n  background-image: ", ";\n  background-origin: padding-box,border-box;\n  border: 2px solid transparent;\n\n  overflow: hidden;\n  border-radius: 32px;\n  width: 100%;\n  max-height: 100vh;\n  z-index: ", ";\n\n  ", " {\n    width: auto;\n    min-width: ", ";\n    max-width: 100%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.modal.background;
-}, function (_a) {
-    var theme = _a.theme;
-    return theme.colors.cardBorder;
+    return theme.colors.gradients.cardBackground;
 }, function (_a) {
     var theme = _a.theme;
     return theme.zIndices.modal;
@@ -4735,7 +4725,7 @@ var Logo = function (_a) {
     var isDark = _a.isDark, href = _a.href;
     var linkComponent = useContext(MenuContext).linkComponent;
     var isAbsoluteUrl = href.startsWith("http");
-    var mobileLogo = isDark ? '/images/logo-dark.png' : '/images/logo-light.png';
+    var mobileLogo = isDark ? '/images/logo-dark.svg' : '/images/logo-light.svg';
     var desktopLogo = isDark ? '/images/logoWithText_dark.png' : '/images/logoWithText_light.png';
     var innerLogo = (React__default.createElement(React__default.Fragment, null,
         React__default.createElement(StyledLogo, { className: "mobile-icon", src: mobileLogo }),
@@ -5265,7 +5255,7 @@ var ConnectModal = function (_a) {
                     !showMore && React__default.createElement(MoreWalletCard, { t: t, onClick: function () { return setShowMore(true); } }))),
             React__default.createElement(Box, { p: "24px" },
                 React__default.createElement(Text, { textAlign: "center", color: "textSubtle", as: "p", mb: "16px" }, t("Haven’t got a crypto wallet yet?")),
-                React__default.createElement(Button, __assign({ as: "a", href: "https://docs.pancakeswap.finance/get-started/connection-guide", variant: "subtle", width: "100%" }, getExternalLinkProps()), t("Learn How to Connect"))))));
+                React__default.createElement(Button, __assign({ className: "default-button", as: "a", href: "https://docs.pancakeswap.finance/get-started/connection-guide", variant: "secondary", width: "100%" }, getExternalLinkProps()), t("Learn How to Connect"))))));
 };
 var templateObject_1$1;
 

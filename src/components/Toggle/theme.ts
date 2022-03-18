@@ -5,9 +5,9 @@ export type ToggleTheme = {
 };
 
 export const light: ToggleTheme = {
-  handleBackground: lightColors.backgroundAlt,
+  handleBackground: lightColors.contrast,
 };
 
 export const dark: ToggleTheme = {
-  handleBackground: darkColors.backgroundAlt,
+  handleBackground: darkColors.contrast,
 };
