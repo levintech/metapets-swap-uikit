@@ -24,7 +24,7 @@ const StyledLink = styled("a")`
     }
   }
   .desktop-icon {
-    width: 160px;
+    width: 240px;
     display: none;
     ${({ theme }) => theme.mediaQueries.nav} {
       display: block;
@@ -43,13 +43,29 @@ const StyledLink = styled("a")`
   }
 `;
 
+const StyledLogo = styled.img`
+  margin-left: 16px;
+  margin-right: 16px;
+`;
+
+const StyledLogoWithTextIcon = styled.img`
+  margin-left: 16px;
+  margin-right: 32px;
+`;
+
+
 const Logo: React.FC<Props> = ({ isDark, href }) => {
   const { linkComponent } = useContext(MenuContext);
   const isAbsoluteUrl = href.startsWith("http");
+  const mobileLogo = isDark ? '/images/logo-dark.png' : '/images/logo-light.png'
+  const desktopLogo = isDark ? '/images/logoWithText_dark.png' : '/images/logoWithText_light.png'
+
   const innerLogo = (
     <>
-      <LogoIcon className="mobile-icon" />
-      <LogoWithTextIcon className="desktop-icon" isDark={isDark} />
+      {/* <LogoIcon className="mobile-icon" />
+      <LogoWithTextIcon className="desktop-icon" isDark={isDark} /> */}
+      <StyledLogo className="mobile-icon" src={mobileLogo} />
+      <StyledLogoWithTextIcon className="desktop-icon" src={desktopLogo} />
     </>
   );
 

@@ -12,6 +12,7 @@ import CakePrice from "../../components/CakePrice/CakePrice";
 import Logo from "./components/Logo";
 import { MENU_HEIGHT, MOBILE_MENU_HEIGHT, TOP_BANNER_HEIGHT, TOP_BANNER_HEIGHT_MOBILE } from "./config";
 import { NavProps } from "./types";
+import { ThemeSwitcher } from "../../components/ThemeSwitcher";
 import LangSelector from "../../components/LangSelector/LangSelector";
 import { MenuContext } from "./context";
 
@@ -26,8 +27,7 @@ const StyledNav = styled.nav`
   align-items: center;
   width: 100%;
   height: ${MENU_HEIGHT}px;
-  background-color: ${({ theme }) => theme.nav.background};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
+  background: ${({ theme }) => theme.colors.gradients.nav};
   transform: translate3d(0, 0, 0);
 
   padding-left: 16px;
@@ -136,11 +136,14 @@ const Menu: React.FC<NavProps> = ({
               {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />}
             </Flex>
             <Flex alignItems="center" height="100%">
-              {!isMobile && (
+              {/* {!isMobile && (
                 <Box mr="12px">
                   <CakePrice cakePriceUsd={cakePriceUsd} />
                 </Box>
-              )}
+              )} */}
+              <Box mr="12px">
+                <ThemeSwitcher isDark={isDark} toggleTheme={toggleTheme} />
+              </Box>
               <Box mt="4px">
                 <LangSelector
                   currentLang={currentLang}
@@ -169,20 +172,9 @@ const Menu: React.FC<NavProps> = ({
             )}
           </Flex>
         )}
-        <BodyWrapper mt={!subLinks ? `${totalTopMenuHeight + 1}px` : "0"}>
+        <BodyWrapper>
           <Inner isPushed={false} showMenu={showMenu}>
             {children}
-            <Footer
-              items={footerLinks}
-              isDark={isDark}
-              toggleTheme={toggleTheme}
-              langs={langs}
-              setLang={setLang}
-              currentLang={currentLang}
-              cakePriceUsd={cakePriceUsd}
-              buyCakeLabel={buyCakeLabel}
-              mb={[`${MOBILE_MENU_HEIGHT}px`, null, "0px"]}
-            />
           </Inner>
         </BodyWrapper>
         {isMobile && <BottomNav items={links} activeItem={activeItem} activeSubItem={activeSubItem} />}

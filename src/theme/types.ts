@@ -30,6 +30,9 @@ export type Shadows = {
 };
 
 export type Gradients = {
+  nav: string;
+  background: string;
+  cardBackground: string;
   bubblegum: string;
   inverseBubblegum: string;
   cardHeader: string;

@@ -1162,7 +1162,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c4 .desktop-icon {
-  width: 160px;
+  width: 280px;
   display: none;
 }
 
