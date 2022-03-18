@@ -17,8 +17,8 @@ const scaleKeyValues = {
     handleLeft: "3px",
     handleTop: "3px",
     checkedLeft: "calc(100% - 30px)",
-    toggleHeight: "32px",
-    toggleWidth: "56px",
+    toggleHeight: "36px",
+    toggleWidth: "64px",
   },
   lg: {
     handleHeight: "32px",
@@ -61,20 +61,15 @@ export const Input = styled.input<InputProps>`
   &:checked + ${Handle} {
     left: ${getScale("checkedLeft")};
   }
-
-  &:focus + ${Handle} {
-    box-shadow: ${({ theme }) => theme.shadows.focus};
-  }
-
-  &:hover + ${Handle}:not(:disabled):not(:checked) {
-    box-shadow: ${({ theme }) => theme.shadows.focus};
-  }
 `;
 
 const StyledToggle = styled.div<StyleToggleProps>`
+  background-clip: padding-box,border-box;
+  background-image: ${({ theme }) => theme.colors.gradients.cardBackground};
+  background-origin: padding-box,border-box;
+  border: 2px solid transparent;
+
   align-items: center;
-  background-color: ${({ theme, $checked, $checkedColor, $defaultColor }) =>
-    theme.colors[$checked ? $checkedColor : $defaultColor]};
   border-radius: 24px;
   box-shadow: ${({ theme }) => theme.shadows.inset};
   cursor: pointer;

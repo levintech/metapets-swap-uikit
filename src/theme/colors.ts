@@ -38,9 +38,9 @@ export const lightColors: Colors = {
   textSubtle: "#7A6EAA",
   disabled: "#E9EAEB",
   gradients: {
-    nav: "linear-gradient(180deg, #000000, transparent)",
+    nav: "linear-gradient(180deg,#fff,hsla(0,0%,100%,0));",
     background: "linear-gradient(180deg, #0befd8, #5959df)",
-    cardBackground: "linear-gradient(270deg,#141520,#141520),linear-gradient(210deg,#f213ff,#161616,#0befd8)",
+    cardBackground: "linear-gradient(270deg,#fcfcfc,#fcfcfc),linear-gradient(184deg,#f213ff,#c9c9c9,#0befd8);",
     bubblegum: "linear-gradient(139.73deg, #E5FDFF 0%, #F3EFFF 100%)",
     inverseBubblegum: "linear-gradient(139.73deg, #F3EFFF 0%, #E5FDFF 100%)",
     cardHeader: "linear-gradient(111.68deg, #F2ECF2 0%, #E8F2F6 100%)",
