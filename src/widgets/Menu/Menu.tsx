@@ -144,16 +144,18 @@ const Menu: React.FC<NavProps> = ({
               <Box mr="12px">
                 <ThemeSwitcher isDark={isDark} toggleTheme={toggleTheme} />
               </Box>
-              <Box mt="4px">
-                <LangSelector
-                  currentLang={currentLang}
-                  langs={langs}
-                  setLang={setLang}
-                  buttonScale="xs"
-                  color="textSubtle"
-                  hideLanguage
-                />
-              </Box>
+              { !isMobile &&
+                <Box mt="4px">
+                  <LangSelector
+                    currentLang={currentLang}
+                    langs={langs}
+                    setLang={setLang}
+                    buttonScale="xs"
+                    color="textSubtle"
+                    hideLanguage
+                  />
+                </Box>
+              }
               {globalMenu} {userMenu}
             </Flex>
           </StyledNav>
