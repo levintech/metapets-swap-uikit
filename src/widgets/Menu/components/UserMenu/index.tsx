@@ -8,14 +8,18 @@ import MenuIcon from "./MenuIcon";
 import { UserMenuItem } from "./styles";
 
 export const StyledUserMenu = styled(Flex)`
+  background-clip: padding-box,border-box;
+  background-image: ${({ theme }) => theme.colors.gradients.cardBackground};
+  background-origin: padding-box,border-box;
+  border: 2px solid transparent !important;  
+
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.tertiary};
-  border-radius: 16px;
+  border-radius: 24px;
   box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   display: inline-flex;
-  height: 32px;
-  padding-left: 40px;
+  height: 40px;
+  padding-left: 10px;
   padding-right: 8px;
   position: relative;
 
@@ -110,7 +114,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
           setIsOpen((s) => !s);
         }}
       >
-        <MenuIcon avatarSrc={avatarSrc} variant={variant} />
+        {/* <MenuIcon avatarSrc={avatarSrc} variant={variant} /> */}
         <LabelText title={text || account}>{text || accountEllipsis}</LabelText>
         <ChevronDownIcon color="text" width="24px" />
       </StyledUserMenu>
