@@ -5244,10 +5244,7 @@ var ConnectModal = function (_a) {
                 React__default['default'].createElement(Grid, { gridTemplateColumns: "1fr 1fr" },
                     displayListConfig.map(function (wallet) { return (React__default['default'].createElement(Box, { key: wallet.title },
                         React__default['default'].createElement(WalletCard, { walletConfig: wallet, login: login, onDismiss: onDismiss }))); }),
-                    !showMore && React__default['default'].createElement(MoreWalletCard, { t: t, onClick: function () { return setShowMore(true); } }))),
-            React__default['default'].createElement(Box, { p: "24px" },
-                React__default['default'].createElement(Text, { textAlign: "center", color: "textSubtle", as: "p", mb: "16px" }, t("Haven’t got a crypto wallet yet?")),
-                React__default['default'].createElement(Button, __assign({ className: "default-button", as: "a", href: "https://docs.pancakeswap.finance/get-started/connection-guide", variant: "secondary", width: "100%" }, getExternalLinkProps()), t("Learn How to Connect"))))));
+                    !showMore && React__default['default'].createElement(MoreWalletCard, { t: t, onClick: function () { return setShowMore(true); } }))))));
 };
 var templateObject_1$1;
 
